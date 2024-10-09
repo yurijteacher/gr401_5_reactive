@@ -25,7 +25,6 @@ public class User implements UserDetails {
     private String username;
     private String password;
 
-
     private Set<GrantedAuthority> authorities = new HashSet<>();
 
     public User(Long id, String username, String password) {

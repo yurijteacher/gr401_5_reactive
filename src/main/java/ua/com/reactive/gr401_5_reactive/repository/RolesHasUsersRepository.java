@@ -12,4 +12,7 @@ public interface RolesHasUsersRepository extends ReactiveCrudRepository<RolesHas
     @Query("SELECT role_id FROM roles_has_users WHERE user_id = :userId")
     Flux<Long> findRoleIdsByUserId(Long userId);
 
+
+
+
 }

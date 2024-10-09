@@ -23,9 +23,12 @@ public class UserService implements ReactiveUserDetailsService {
     private final RoleRepository roleRepository;
 
     public Flux<GrantedAuthority> getAuthorities(Long userId) {
-        return rolesHasUsersRepository.findRoleIdsByUserId(userId)
-                .flatMap(roleId -> roleRepository.findById(roleId))
-                .map(role -> role)
+        return
+//                 rolesHasUsersRepository.findRoleIdsByUserId(userId)
+//                 .flatMap(roleId -> roleRepository.findById(roleId))
+
+                roleRepository.findByUserId(userId)
+//                .map(role -> role)
                 .cast(GrantedAuthority.class);
     }
 
